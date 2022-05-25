@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  env-name: "feat"
+  env-name: feat
 
 jobs:
   set-matrix:
