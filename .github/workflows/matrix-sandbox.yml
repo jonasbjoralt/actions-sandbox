@@ -7,10 +7,19 @@ on:
       - main
 
 jobs:
+  set-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - id: set-usernames
+        run: echo "::set-output name=matrix::${{ secrets.usernames }}"
+    outputs:
+      matrix: ${{ steps.set-usernames.outputs.matrix }}
+
   test-env-matrix:
+    needs: set-matrix
     strategy:
       matrix:
-        username: ${{ secrets.usernames }}
+        username: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
     runs-on: ubuntu-latest
     steps:
       - name: Hello World
