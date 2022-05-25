@@ -19,7 +19,7 @@ jobs:
 
       - name: Parse and set trader usernames
         id: set-usernames
-        run: echo "::set-output name=matrix::$(cat ./usernames-${{ env.env-name }}.json)"
+        run: echo "::set-output name=matrix::$(cat ./usernames.json)"
     outputs:
       matrix: ${{ steps.set-usernames.outputs.matrix }}
 
