@@ -8,6 +8,7 @@ on:
 
 jobs:
   set-matrix:
+    name: Setup Matrix
     runs-on: ubuntu-latest
     steps:
       - name: CHECK-OUT GIT REPOSITORY
@@ -20,6 +21,7 @@ jobs:
       matrix: ${{ steps.set-usernames.outputs.matrix }}
 
   test-env-matrix:
+    name: Hello World
     needs: set-matrix
     strategy:
       matrix:
