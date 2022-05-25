@@ -10,7 +10,7 @@ jobs:
   test-env-matrix:
     strategy:
       matrix:
-        username: ${{fromJson(secrets.usernames)}}
+        username: ${{ secrets.usernames }}
     runs-on: ubuntu-latest
     steps:
       - name: Hello World
