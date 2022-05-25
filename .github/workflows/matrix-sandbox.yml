@@ -1,0 +1,15 @@
+name: Matrix Sandbox
+
+on:
+  workflow_dispatch:
+  push: main
+
+jobs:
+  test-env-matrix:
+    strategy:
+      matrix:
+        username: ${{ secrets.usernames }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo ${{ matrix.username }}
