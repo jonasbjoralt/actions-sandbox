@@ -2,7 +2,9 @@ name: Matrix Sandbox
 
 on:
   workflow_dispatch:
-  push: main
+  push:
+    branches:
+      - main
 
 jobs:
   test-env-matrix:
