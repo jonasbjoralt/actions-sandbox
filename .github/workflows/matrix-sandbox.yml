@@ -13,6 +13,12 @@ jobs:
       - name: CHECK-OUT GIT REPOSITORY
         uses: actions/checkout@v2
 
+        name: Debug
+        run: ls
+
+        name: Debug 2
+        run: cat ./usernames.json
+
       - id: set-usernames
         run: echo "::set-output name=matrix::$(cat ./usernames.json)"
     outputs:
